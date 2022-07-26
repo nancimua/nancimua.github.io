@@ -1,0 +1,62 @@
+home_widget:
+  - class_name: mybilibili
+    id_name: mybilibili
+    order: -1
+    name: 测试bli
+    icon: fas fa-envelope
+    icon_color: blue
+    url: http://baidu.com
+    background: '#fff'
+    html: '
+      <div id="myBli">
+        <vue-seamless-scroll
+          :data="listData"
+          :class-option="classOption"
+          class="warp"
+        >
+          <ul class="ul-item" style="width:720px;">
+            <!-- 在这里改, 手动修改a连接的href值和img的src值, 如果你会进阶，你可以使用v-for, 或者数据使用动态数据-->
+            
+            <li class="li-item">
+              <a href="http://baidu.com">
+                <img class="no-lazy" src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg">
+              </a>
+            </li>
+
+            <li class="li-item">
+              <a href="http://baidu.com">
+                <img class="no-lazy" src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg">
+              </a>
+            </li>
+
+            <li class="li-item">
+              <a href="http://baidu.com">
+                <img class="no-lazy" src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg">
+              </a>
+            </li>
+
+            <li class="li-item">
+              <a href="http://baidu.com">
+                <img class="no-lazy" src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg">
+              </a>
+            </li>
+
+            <li class="li-item">
+              <a href="http://baidu.com">
+                <img class="no-lazy" src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg">
+              </a>
+            </li>
+
+            <li class="li-item">
+              <a href="http://baidu.com">
+                <img class="no-lazy" src="https://pic4.zhimg.com/80/v2-f549722dac8f777693c090a92498de0f_1440w.jpg">
+              </a>
+            </li>
+            <!-- 在这里结束 -->
+          </ul>
+        </vue-seamless-scroll>
+      </div>
+
+      <script src="/bli/index.js"></script>
+      <link href="/bli/index.css" rel="stylesheet">
+    '
