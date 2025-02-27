@@ -1,0 +1,45 @@
+/* 重置全局样式，将 margin 和 padding 设为 0，应用 border-box 盒模型 */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 为包含主要内容的容器设置样式，使其水平居中 */
+.main-content {
+    width: 60%;
+    margin: 0 auto;
+}
+
+/* 让 h3 标题文本居中 */
+h3 {
+    text-align: center;
+}
+
+/* 设置表格、表格行、单元格和表头的样式 */
+table, tr, td, th {
+    text-align: center;
+    border: 1px solid gray;
+    border-collapse: collapse;
+}
+
+/* 让表格宽度占满父容器 */
+table {
+    width: 100%;
+}
+
+/* 为表格的偶数行设置背景颜色 */
+tr:nth-child(2n) {
+    background-color: rgba(88, 73, 65, 0.18);
+}
+
+/* 当鼠标悬停在表格行上时，改变背景颜色 */
+tr:hover {
+    background-color: rgb(255, 235, 149);
+}
+
+/* 为具有 id="tt" 的元素设置文本右对齐和右内边距 */
+#tt {
+    text-align: right;
+    padding-right: 20px;
+}
