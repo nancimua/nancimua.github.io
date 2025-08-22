@@ -1,0 +1,2029 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>假如我有三天光明 | 走出黑暗与寂静 | 南辞的家</title>
+
+  <link rel="icon" type="image/png" href="https://picx.zhimg.com/80/v2-c7fcadd83875ab40da79d66fce108981_1440w.png">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+
+    
+        <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  
+  <!-- 预加载动画 -->
+  <!-- 页面预加载动画 -->
+
+  
+    <div class="preloader_2" id="loader">
+  <div class="loader"></div>
+</div>
+
+  
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+</script>
+
+  <body>
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " 
+  id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="https://picx.zhimg.com/80/v2-d6a5f19dc2318873e2286b086a97ded0_1440w.png" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d6a5f19dc2318873e2286b086a97ded0_1440w.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">南辞的家</h3>
+      <h5 class="drawer-box-head_desc">欢迎来到南辞的小天地，这里有生活的点滴、技术的探索和对世界的思考。</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/archives" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/aboutme" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/friends" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                  
+                  <span class="name">友情链接</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/689915465" class="drawer-menu-item-link">
+                  
+                    <i class="fa-brands fa-bilibili" aria-hidden="true"></i>
+                  
+                  <span class="name">哔哩哔哩</span>
+                </a>
+              
+            </li>
+          
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="https://picx.zhimg.com/80/v2-d6a5f19dc2318873e2286b086a97ded0_1440w.png" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d6a5f19dc2318873e2286b086a97ded0_1440w.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/" class="logo">南辞的家</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/" class="menu-item-link" title="首页">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/archives" class="menu-item-link" title="归档">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/tags" class="menu-item-link" title="标签">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/categories" class="menu-item-link" title="分类">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/aboutme" class="menu-item-link" title="关于">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/friends" class="menu-item-link" title="友情链接">
+                  
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                  
+                  <span class="name">友情链接</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/689915465" class="menu-item-link" title="哔哩哔哩">
+                  
+                    <i class="fa-brands fa-bilibili" aria-hidden="true"></i>
+                  
+                  <span class="name">哔哩哔哩</span>
+                </a>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+  
+    <div id="he-plugin-simple"></div>
+    <script>
+      WIDGET = {
+        CONFIG: {
+          "modules": "012",
+          "background": 5,
+          "tmpColor": "4A4A4A",
+          "tmpSize": 16,
+          "cityColor": "4A4A4A",
+          "citySize": 16,
+          "aqiSize": 16,
+          "weatherIconSize": 24,
+          "alertIconSize": 18,
+          "padding": "10px 10px 10px 10px",
+          "shadow": "1",
+          "language": "auto",
+          "borderRadius": 5,
+          "fixed": "false",
+          "vertical": "middle",
+          "horizontal": "center",
+          "key": "2784dd3fcb1e4f0f9a9b579bf69641f2"
+        }
+      }
+    </script>
+    <script defer src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    
+</header>
+        <!-- 内容区域 -->
+        
+ <!-- prismjs 代码高亮 -->
+ 
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-a20278e9a2c2324ca2c31db505c60527_1440w.jpeg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        假如我有三天光明 | 走出黑暗与寂静
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-06-08 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E5%81%87%E5%A6%82%E6%88%91%E6%9C%89%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/" class="post-detail-header_category">
+              假如我有三天光明
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <p>  　　“我觉得你所能接触的世界太小了，真可怜！”常有人不胜怜惜地对我说。可是只有我自己心里明白，这些人不太了解我的生活情形，他们当然也不知道我有多少朋友，看过多少书，旅行过多少地方。每当我听到有人说我的生活圈太小时，我总忍不住暗自好笑。<br>  　　那些不是盲文的书报，我就请别人念给我听。例如每天的早报，总是由老师或汤姆斯小姐先念标题，然后我挑那些感兴趣的部分请她细读。一般杂志也是一样，总是由老师或汤姆斯小姐念给我听，平均每个月我大概要读7 至8 种杂志。此外，我还经常阅读盲文杂志，因为那上面多半会转载一些普通杂志上的好文章。<br>  　　有些人亲自写盲文信函给我，另一些人则请会盲文的人代写，因此我常常可以享受到从指尖传来的友情。对我而言，我确实喜欢读盲文，因为这到底是由自己直接去感受，而且印象也更深刻。<br>  　　有位名叫爱特那·波达的好友，他要去环游世界时设想得很周到，随身携带着盲文字板，每到一处就写信把他的所见所闻告诉我。因此，我就像跟着他四处旅行一般，共同聆听大西洋上冰山进裂的声响；一同搭机飞越英吉利海峡；我们一起在巴黎如梦如幻的大道上漫步；也到了水都威尼斯，在皓月当空的夜晚，一面欣赏月光下的威尼斯，一面静听船夫唱意大利情歌。那种气氛是多么罗曼蒂克啊！在看了维苏威火山与几千年前的罗马竞技场后，就要前往神秘的东方了。<br>  　　我随着波达来到印度、中国，看到许多新奇又有趣的事物。<br>  　　抵达日本时正值樱花纷纷飘落的季节，缤纷的落英交织成一片奇异的世界，清幽肃穆的寺院钟声更引发了我许多遐想。<br>  　　最妙的是，波达竟大惊小怪地对我说：“你瞧！你瞧！日本的妇女都背着小孩在街上走，这儿的男士竟然都足登四寸高的木履，在马路上喀拉喀拉地溜达。”<br>  　　有波达这样的朋友，所谓形体上的不自由其实等于没有了。<br>  　　在许多关切我的朋友中，威廉·苏夫人是最为热心、随时都准备帮助我的人之一。<br>  　　苏夫人赞助过许许多多的慈善团体，只要是与我有关的团体，她捐的钱总是特别多。当我们的想法迥然相异时，她对我说：“虽然我不同意你的观点，但你我的友情是另一回事。”她依然不改初衷地爱护我。<br>  　　佛兰克·克勃特是我大学时代的同窗好友，他在25年前创立了克勃特出版社，曾出版了我的传记作品《我的生活》一书。现在，我打算出续集，佛兰克仍如过去那样全力支援。其实早在10年前，佛兰克一再鼓励我写这本书的续集，而我在进行本书的写作时，则总是感到佛兰克似乎就在我的身边。<br>  　　1912年的冬天，《青鸟》一书的作者梅多林克夫人到连杉来，她的态度和善，个性活泼，我们两人一见如故，非常投缘。她回到法国后还寄卡片给我，她在卡片上亲笔写着：“为发现青鸟的少女祈求幸福。”<br>  　　来连杉的名人还真不少，其中之一是诺贝尔文学奖得主——印度诗人泰戈尔先生，这位诗人长得非常高大，蓬松的头发呈灰色，几乎与脸上的落腮胡分不清楚，令我想起圣经上所记载的先知们。我很喜欢泰戈尔诗集，看了不少他的作品，可以深深地感觉出他对人类的那份爱心。看到这位诗人，我引为平生莫大的光荣。<br>  　　当我向这位诗人倾诉我的尊崇与仰慕时，他说：“我很高兴你能在我作品中看到我对人类的爱，你知道吗？这个世界正在等待的，就是出现一位爱神与世人更甚于爱自己的人哪！”<br>  　　泰戈尔先生谈到时局时忧心忡忡，他以哀伤的口吻提到印度、中国以及世界上一些强国的局势：“欧洲各国强迫中国人吸鸦片，如果他们拒绝的话，国土就有被瓜分的危险。在这种情况下，亚洲民族怎能不重整军备以求自保呢？英国就像一只秃鹰，已经把战火带到了太平洋沿岸，在那儿建立许多军事基地。亚洲各国中，日本已经能够自己站立了，可是，中国大概要等到城门被攻破，盗贼闯进家门时才会惊醒……请记住，一个太爱自己的人，往往就是灭亡自己的人，能解救世人的，大概只有神的爱了。”<br>  　　听了他的话使我联想到甘地，因为甘地先生正是一个不仅在嘴上谈“爱”，而且以行动来实践的人。<br>  　　艺术家们似乎对我特别厚爱，像艾连塔利和约瑟·杰佛逊等优秀演员还特地为我表演了他们的拿手戏，他们让我以手指去追踪他们的一言一行，一颦一笑，我兴奋得屏息以待，惟恐遗漏任何细节。歌唱家卡罗素、夏列亚宾等允许我把手放在他们的唇上去“听”他们的美妙歌声。<br>  　　我曾手抚钢琴欣赏戈德斯基的演奏，轻触海飞兹的小提琴去领会那美妙琴音。当戈德斯基奏出肖邦的小夜曲时，我深深沉醉了，恍如置身于热带海岛上。<br>  　　有时候，我把手放在收音机的的共鸣板上“听”音乐节目。在乐器中，我觉得竖琴、钢琴、小提琴的声音都非常美妙。不过，对于目前正开始流行的爵士音乐却不敢恭维，那种爆炸性的响声，令我感到好像有什么东西正朝着我冲过来似的，每当指尖传给我这种信息时，免不了有一种想转身逃跑的冲动，似乎人类在原始时代潜藏在体内的那种对大自然的恐惧感，再度复生了。<br>  　　实业界的大亨，我曾拜访过电器发明大王汤姆斯·爱迪生先生。在我前往新泽西州演讲时，爱迪生先生曾好意邀我去他家。他给人的第一个印象相当严肃。据他的夫人告诉我，爱迪生先生常把自己关在实验室内通宵工作，当他实验进行到一半时，最讨厌人家去打扰，甚至连吃饭都可以省了。<br>  　　爱迪生先生要我把手放在唱机上，然后很热切地问我听懂没有，可惜我实在听不懂。为了不使爱迪生先生失望，我试着把当时头上戴着的草帽靠近唱机，使声音在草帽上更集中，但仍然无法了解。<br>  　　一起进餐时，爱迪生先生对我说：“你听不见任何声音也有好处，至少比较容易集中心思，不受外界的干扰，像这样活在自己的世界里，不是很好吗？”<br>  　　我回答他：“如果我是一位像你这样了不起的发明家，我希望能够发明一种使聋子得到听力的机器。”<br>  　　他有点诧异地说：“幄，你这么想？我可不做这种无聊的事，反正人类说的话多半无关紧要，可听可不听。”<br>  　　我把嘴靠在爱迪生先生耳边，试图直接对他说出我的意思，可是他却说我的声音像水蒸气爆炸时一样，让他无法分辨，他说：“你还是告诉梅西夫人，然后由她转述，她的声音像小提琴般悦耳。”他说的每一句话都带有命令的味道。<br>  　　至于汽车大王福特先生，是我在内布达斯加演讲后才见到的。<br>  　　福特先生亲自带领我们到工厂里去参观，并且以谦和的态度向我们讲述他成功的经历：“开始时，我的动机是要生产一种连农夫都可以买得起的汽车，几经研究试验，我对汽车就越来越内行了……其实，有好构想的人何其多，只是大多数人不知道如何去活用，因此有也等于没有了。”<br>  　　在参观过福特先生的汽车工厂以后，我不禁有一个感想：如果把这个世界视为像福特工厂一般来管理，是否会更有效率呢？那时，是不是每个人都可以缩短工作时间，却拿到更高的报酬呢？<br>  　　如果人们一天中只须工作几个小时，则衣食住行都不匾乏，还能有四五个小时的自由时间岂不是很好吗？不过，我自己也知道这种想法是痴人说梦，福特固然是一个杰出的企业家，但他的方法未必适合整个世界，因为国家毕竟不能视同工厂去管理啊！<br>  　　在那次拜见福特先生10年之后，福特先生在一次盲人大会中捐了一大笔钱，他说他的工厂里雇用了73位盲人，他之所以雇用他们，并非为了怜悯，而是因为他们在工作上表现得相当优异。我听到这个消息时，真有一种说不出的高兴。<br>  　　当我感受自己的鼻子有些不舒服，心中出现一阵不安时，我就知道我该到纽约去散散心了。纽约市内有各种不同的香味，可以刺激我的鼻子；我也喜欢到热闹嘈杂的地下铁路沿线逛一下。像这样到纽约去一趟回来后，我的活力又可恢复了，因为我感觉到自己跟其他人一样地活着。<br>  　　从繁华的城市重返宁静的田园，会感觉到自己的庭园分外可爱，虽然有人嫌它像老鼠窝，但对我而言，它是世界上最舒适的场所。<br>  　　我时常独自从前门的阶梯下来，沿着小径往前走，到尽头时一拐弯，就是我平常散步的马路了。小屋的四周有最宜人的景色，尤其每年的6 月，郁金香与风信子全都展开了笑靥，我们就像住在花海中的小岛上一样。在我走往小凉亭的马路两旁，满是移植自德国或日本的菖薄花。6 月真是个奇妙的月份，连树木都舒展了四肢，伸出的技桠似乎想向我们倾吐什么。我有时会觉得，树木真的在对我说：“你们人类何时才能学会这样站着不动呢？”有时则说：“看看那不安分的海伦，在花草丛中不停地穿梭，就像一只风中的蝴蝶。”那横生的小枝桠，无异是对我指指点点的小手指。<br>  　　我常常想：“为什么人不像树木一样，固定站在某一个地点上呢？树木虽然不会移动，不是照样生长得很好吗？甚至比人类活得更快乐更长久呢！<br>  　　近来，我常为了劳资双方对立以及战争的问题而失眠，我奇怪人类为何不把花在战争上的精力转而投注在研究如何改善人类生活、迈向理想境界的方向上去？如此世界不是可以更美好吗？不过我相信，这一天终将来临。<br>  　　我盼望世界能早一天实现和平，让人类过得更幸福，到那时，人们就不必再期待身后的天堂了。<br>  　　最近，我常独坐书房中沉思：“如果当初郝博士不曾设计出这套教育盲聋者的方法，那我的这一生将变成什么样呢？”<br>  　　据说在郝博士想到要教育萝拉时，当时的法律上还明文规定着：盲聋者视同白痴。<br>  　　莎莉文老师在柏金斯盲校时与萝拉同寝室，所以对她的事很清楚，而第一个教莎莉文老师手语的，就是萝拉。<br>  　　当莎莉文老师告诉萝拉，她将前往亚拉巴马州去教一位又盲又哑又聋的女孩时，萝拉很高兴，同时嘱咐她：“不要使这个孩子养成太骄纵的个性，不能因为她有残缺就凡事顺着她，而使她变得太任性。”<br>  　　临走时，盲校中的那些女孩子们一起托莎莉文老师带给我一个洋娃娃，洋娃娃所穿的衣服就是萝拉亲手做的。我就是靠这个洋娃娃而学到“DOLL”这个字的。<br>  　　我初抵柏金斯盲校时，莎莉文老师头一个带我去见的人就是萝拉。当时萝拉正在房中编织，由于很久没有见到莎莉文老师，因此非常欣喜地迎接我们。同时也吻了我。可是当她看我想伸手去摸她所编织的花边时，就很快地把花边移开，并且用手语对我说：“你的手太脏了！”<br>  　　我又想用手去摸她的脸，她向后一闪，暗示我的手太脏。同时还问莎莉文老师：“你没有教这个孩子礼貌吗？”接着，她很慎重地一字一字对我说：“你去访问一位女士时，绝不可大随便。”<br>  　　我一连碰了几个钉子，心里当然很不痛快，因此就使性子一屁股坐在地板上，可是萝拉也不含糊，她立刻毫不客气地一把将我拖起来。<br>  　　“穿漂亮的礼服时绝不可坐在地板上，会把衣服坐脏的。你这个孩子真是任性，一点教养都没有！”<br>  　　我们要告别出来前，吻别她时不小心踩到了她的脚，免不了又被她训了一顿。事后萝拉告诉莎莉文老师：“这个孩子似乎任性了些，可是脑筋倒是很灵活的。”而我对萝拉的第一印象是觉得她冷酷得犹如铜墙，令人无法亲近。<br>  　　萝拉与我有不少相似的地方，因此，很多人拿我俩做比较。<br>  　　我们变成盲聋时的年纪相仿，开始时的行动粗鲁，不易管教也很类似；此外，我们两人都是金发碧眼，又同样在7 岁时开始接受教育。相似点仅此而已，因为萝拉用功上进的程度远在我之上。<br>  　　这个暂且不说，萝拉确实是一个既聪明又善良的人，如果她当初也像我一样，有一位像莎莉文这样的老师来教导她，则她的成就必然比我大得多。<br>  　　一想到这点，我就不得不庆幸自己的幸运。可是当我再想到自己已经活到40多岁，而且能和常人一样讲话，但对那些仍生活在黑暗荒漠中的人却一点贡献也没有时。又不禁惭愧不已。<br>  　　该做的事情实在太多了，虽然调查仍继续进行中，但就既有的资料显示，在国内，除去年纪很大或卧病在床的以外，那些又盲又聋在等待指引他们走出黑暗世界的就有379 人，其中15人目前正值学龄阶段，可是却没有学校能收容他们。<br>  　　常有人问我：“我该如何来处理这样的儿童呢？”<br>  　　由于小孩子们智力、环境各异，因此我也不能很肯定地告诉他是该请家教，或是该送到哪一所学校去。我们能说的只是：“在儿童的眼、耳机能未完全丧失前，要尽快送到附近的盲哑学校去，否则这样的儿童日后会不愿意学习的。”<br>  　　在此，我顺便向大家说明一件令许多人感到好奇的事，那就是一个人虽然生活在黑暗或沉寂中，可是他仍像常人一样可以回忆、可以想像，过着属于自己的快乐生活。当然，他要尽量以他可能的方式去接触这个世界，不要自闭在这个世界之外。以我为例，因为我有许多朋友，他们又都热心地把他们耳闻目睹的经验灌输给我，因此，我同样可以生活得多彩多姿。我永远不会忘记这些朋友们对我的帮助，他们给了我许许多多的勇气与快乐。<br>  　　无可讳言，身体上的不自由终究是一种缺憾，这点我也很了解。我不敢说从没有怨天尤人或沮丧的时候，但我更明白这样根本于事无补，因此我总是极力控制自己，使自己的脑子不要去钻这种牛角尖。<br>  　　我时常自勉的一个目标是：我在有生之日，要极力学会自立，在能力范围之内尽量不去增添别人的麻烦。以宗教上的说法来表示就是：带笑背负起自己的十字架。这并不是对命运投降，而是面对命运，进而设法克服它。<br>  　　这种事在口头上说来非常容易，可是要付诸实施的话，如果没有很深刻的信仰、坚强的毅力，再加上友情的温暖、上帝的指引，只怕很难做得到。<br>  　　现在回忆我的过去，值得安慰的是，我至少可以做一只“只会模仿猫头鹰的鹦鹉”。所谓“只会模仿猫头鹰的鹦鹉”代表什么？作家爱德华在完成《小洞的故事》这本书后，写信给他的一位朋友说：“我的祖父养了许多鹦鹉却什么也不会，只会模仿猫头鹰鼓翅的样子。来访的客人们总是免不了要兴致勃勃地谈论鹦鹉们的精彩表演，并频频追问它们还会什么新奇花招。此时祖父就会一本正经地说：”快别这么说，否则我们的比利会不高兴的，是吗？比利，来，你来模仿猫头鹰给他们看吧！‘我常常想起小时的这段往事。现在我写了这本书，就像那只只会模仿猫头鹰的鹦鹉一般。“<br>  　　我也把自己比喻成比利，因此很认真地模仿猫头鹰。我的能力太有限，我所能做的只有这件事，就跟小鹦鹉比利一样。<br>  　　我在佛立斯特家中的书房写完自传的最后一行，由于手很酸，暂时停下来休息一下。<br>  　　这儿的院子里有落叶松、山茱萸，但是没有洋槐，至于为什么没有，我也不知道。我的脑海中时常浮现出洋槐夹道的小径，因为就在那条小径上，我消磨过许多时光，同时享受着朋友们无限的温情，那几乎可以说是我的人生小径。现在，这些朋友们有的还在人间的小径上走，有的则已倘祥于天国的花园里了，但我对他们的怀念如一。<br>  　　认真说来，我过去曾看过的许多好书都是我的良师益友，它们代表着许多智者的智慧结晶，我同样对它们怀着敬畏与感恩的心情。<br>  　　我的自传称不上是什么伟大的作品，如果说其中还有些价值的话，并非由于我的才能，而应归功于发生在我身上那些不平常的事情。也许神视我为它的子女而委以重任，希望由于我的盲聋而对其他人发生一点影响吧！<br>  　　神使我眼不能见，耳不能听，因而也无法说话，是想通过这种残缺而给世上的残弱者一些启示。神待我不薄，因为它为我送来了莎莉文老师，由她带领我离开黑暗而沉寂的世界。<br>  　　莎莉文老师自己的视力从小很差，当她担任我的家庭教师时，也只能看到些许光线而已。一个不太健康的弱女子只身远离她的朋友，来到阿拉巴马州的一个小村落，这种勇气不能不说是受了冥冥中某种力量的支配。她为了我不辞任何辛劳，以她微弱的视力为我念了许多书，且成为我与这个世界最初也是最主要的桥梁。我与她非亲非故，她为我所做的一切，岂仅是因为“喜欢我”这句话所可以解释的。<br>  　　直到现在，老师仍然靠着一副度数非常深的特制眼镜来阅读，那副眼镜是贝连博士精心制造的。<br>  　　由于我无法读自己的打字稿，有关事后的修改工作，都是由老师以手语为我复诵。当老师帮我做这些工作时，贝连博士又得伴在老师身边，观察她的视力，随时加以调整。<br>  　　老师为了我，不惜付出一切，她为什么对我这么好呢？<br>  　　我始终相信，只要莎莉文老师有这个心，她可以轻易地成为妇女运动的领导人物，或是一位知名的女作家。可是她却宁愿把一生的精力花在我的身上。她鼓舞了我服务社会人群的心志，遗憾的是，我一直没有良好的表现以报答老师的一片苦心。<br>  　　最后，我要说，虽然我的眼前是一片黑暗，但因为老师带给我的爱心与希望，使我踏入了思想的光明世界。我的四周也许是一堵堵厚厚的墙，隔绝了我与外界沟通的道路，但在围墙内的世界却种满了美丽的花草树木，我仍然能够欣赏到大自然的神妙。我的住屋虽小，也没有窗户，但同样可以在夜晚欣赏满天闪烁的繁星。<br>  　　我的身体虽然不自由，但我的心是自由的。且让我的心超脱我的躯体走向人群，沉浸在喜悦中，追求美好的人生吧！</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E5%81%87%E5%A6%82%E6%88%91%E6%9C%89%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/" class="">
+              假如我有三天光明
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>南辞</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2022/06/08/假如给我三天光明/走出黑暗与寂静/" target="_blank" title="假如我有三天光明 | 走出黑暗与寂静">https://nancimua.github.io/2022/06/08/假如给我三天光明/走出黑暗与寂静/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-9e108f27525ec338b3c2e4e3da8b7767_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-9e108f27525ec338b3c2e4e3da8b7767_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/2022/06/08/%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/%E9%BC%93%E8%B5%B7%E5%8B%87%E6%B0%94%E4%B8%8A%E5%8F%B0%E6%BC%94%E8%AE%B2/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">假如我有三天光明 | 鼓起勇气上台演讲</div>
+      </div>
+      
+      <!-- <div class="content">
+          　　刚学会说话时，我还不太敢出外演讲，因为往往不知道说些什么才好。不过，每当我演讲时，总有来自各个阶层的听众，有老人
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-21dddd13d70aba10b781116e2ef49e78_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-21dddd13d70aba10b781116e2ef49e78_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/2022/06/08/%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/%E8%83%8C%E4%BA%95%E7%A6%BB%E4%B9%A1/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">假如我有三天光明 | 背井离乡</div>
+      </div>
+      <!-- <div class="content">
+          　　安妮心里哼着：“我要走了，我要走了，我就要走了。我不在乎哪里是我的家……”  　　再过几分钟，她就要离开这个家，
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/aboutme/'>
+          <img src='https://picx.zhimg.com/80/v2-c7fcadd83875ab40da79d66fce108981_1440w.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>南辞</h2>
+        
+        
+        
+          <p><span id="jinrishici-sentence">南辞的家</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="https://space.bilibili.com/689915465"
+              class="social fa-brands fa-bilibili flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:1362593067@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/nancimua/nanci.github.io"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=1362593067"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+    
+      <div class="widget moyu" id="moyu" style="order: 0;background: #e9e5d1">
+        <header>
+          
+            <a style="color: #d63130" target="_blank" rel="noopener" href='http://baidu.com'><i class="fa-solid fa-fish fa-fw" aria-hidden="true"></i><span class='name'>开始摸鱼</span></a>
+          
+        </header>
+        <div class="content">
+          <img class="no-lazy" src="https://api.vvhan.com/api/moyu" style="width:100%">
+        </div>
+    </div>
+    
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!--  -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2025/02/04/%E5%BE%AE%E8%BD%AFoffice/Office%E6%BF%80%E6%B4%BB%E5%90%8E%EF%BC%8C%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E4%B8%AD%E6%98%BE%E7%A4%BA%E8%B4%A6%E6%88%B7%E9%94%99%E8%AF%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f3f11e8c9760e1bd9851eebc0852ae04_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f3f11e8c9760e1bd9851eebc0852ae04_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-04</span>
+                
+              </div>
+              <a class="post-title" href="/2025/02/04/%E5%BE%AE%E8%BD%AFoffice/Office%E6%BF%80%E6%B4%BB%E5%90%8E%EF%BC%8C%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E4%B8%AD%E6%98%BE%E7%A4%BA%E8%B4%A6%E6%88%B7%E9%94%99%E8%AF%AF/">Office激活后，用户信息中显示账户错误</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2024/10/03/CMGE%20V0-H%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-2dd53578bed3716bc2dc7fd797218557_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-2dd53578bed3716bc2dc7fd797218557_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-03</span>
+                
+              </div>
+              <a class="post-title" href="/2024/10/03/CMGE%20V0-H%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/">CMGE V0-H安装说明</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2024/10/03/Dell%20G7%20%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB%E8%AE%BE%E5%A4%87%20-%20Goodix%20fingerprint%20%E5%A4%B1%E6%95%88%E5%AE%98%E6%96%B9%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%88%E5%9B%BE%E6%96%87%EF%BC%89/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-60ff53bf4d8a843adf9f449761726048_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-60ff53bf4d8a843adf9f449761726048_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-03</span>
+                
+              </div>
+              <a class="post-title" href="/2024/10/03/Dell%20G7%20%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB%E8%AE%BE%E5%A4%87%20-%20Goodix%20fingerprint%20%E5%A4%B1%E6%95%88%E5%AE%98%E6%96%B9%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%88%E5%9B%BE%E6%96%87%EF%BC%89/">Dell G7 指纹识别设备-Goodix fingerprint 失效官方解决办法（图文）</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2024/10/03/win7%E5%AE%89%E8%A3%85edge%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%90%E7%A4%BA%E6%AD%A4%E7%89%88%E6%9C%AC%E7%9A%84%20Windows%20%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%20Microsoft%20Edge/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-a6084cf7dfbac81b538315b6fa3cff09_1440w.jpeg" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-a6084cf7dfbac81b538315b6fa3cff09_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-03</span>
+                
+              </div>
+              <a class="post-title" href="/2024/10/03/win7%E5%AE%89%E8%A3%85edge%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%90%E7%A4%BA%E6%AD%A4%E7%89%88%E6%9C%AC%E7%9A%84%20Windows%20%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%20Microsoft%20Edge/">win7安装edge浏览器提示:此版本的 Windows 不再支持 Microsoft Edge</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2024/10/03/%E7%B3%BB%E7%BB%9F%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%20(Sysprep.exe)%20%E5%AE%9E%E7%8E%B0OOBE%E7%94%A8%E6%B3%95/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-1172c6f8a22b5e244e0fc3ac251b9ad1_1440w.jpeg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-1172c6f8a22b5e244e0fc3ac251b9ad1_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-03</span>
+                
+              </div>
+              <a class="post-title" href="/2024/10/03/%E7%B3%BB%E7%BB%9F%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%20(Sysprep.exe)%20%E5%AE%9E%E7%8E%B0OOBE%E7%94%A8%E6%B3%95/">系统准备工具 (Sysprep.exe) 实现OOBE用法</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script>
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(66, 185, 133, 0.8)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 <a href="/">南辞的家</a> <br> Powered by <a target="_blank" rel="noopener" href="https://space.bilibili.com/689915465">南辞</a> | <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a> <br> Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          
+            <!-- 不蒜子统计 -->
+            <!-- 不蒜子统计 -->
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+
+          
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js  
+  class=""
+  server="netease"
+  type="playlist"
+  id="6833016027"
+  fixed='true'
+  autoplay='false'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='2'
+  list-folded='true'
+>
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+    <script type="text/javascript">
+  var utteranceCommon = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', '')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>

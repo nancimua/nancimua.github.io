@@ -1,0 +1,2041 @@
+<!DOCTYPE html>
+<html>
+  <!-- meta/link... -->
+  
+
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>假如我有三天光明 | 年华似水 | 南辞的家</title>
+
+  <link rel="icon" type="image/png" href="https://picx.zhimg.com/80/v2-c7fcadd83875ab40da79d66fce108981_1440w.png">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+    <link href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+
+    
+        <script src="https://cdn.bootcdn.net/ajax/libs/vue/2.6.11/vue.min.js"></script>
+    
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+  
+  <!-- 预加载动画 -->
+  <!-- 页面预加载动画 -->
+
+  
+    <div class="preloader_2" id="loader">
+  <div class="loader"></div>
+</div>
+
+  
+<script>
+  var endLoading = function () {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('DOMContentLoaded',endLoading);
+</script>
+
+  <body>
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/js/swiper/swiper.min.js"></script>
+<script src="/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " 
+  id="navHeader"
+  style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="https://picx.zhimg.com/80/v2-d6a5f19dc2318873e2286b086a97ded0_1440w.png" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d6a5f19dc2318873e2286b086a97ded0_1440w.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">南辞的家</h3>
+      <h5 class="drawer-box-head_desc">欢迎来到南辞的小天地，这里有生活的点滴、技术的探索和对世界的思考。</h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/archives" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/tags" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/categories" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/aboutme" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="/friends" class="drawer-menu-item-link">
+                  
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                  
+                  <span class="name">友情链接</span>
+                </a>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/689915465" class="drawer-menu-item-link">
+                  
+                    <i class="fa-brands fa-bilibili" aria-hidden="true"></i>
+                  
+                  <span class="name">哔哩哔哩</span>
+                </a>
+              
+            </li>
+          
+        
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="https://picx.zhimg.com/80/v2-d6a5f19dc2318873e2286b086a97ded0_1440w.png" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d6a5f19dc2318873e2286b086a97ded0_1440w.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/" class="logo">南辞的家</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/" class="menu-item-link" title="首页">
+                  
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                  
+                  <span class="name">首页</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/archives" class="menu-item-link" title="归档">
+                  
+                    <i class="fas fa-archive" aria-hidden="true"></i>
+                  
+                  <span class="name">归档</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/tags" class="menu-item-link" title="标签">
+                  
+                    <i class="fas fa-tags" aria-hidden="true"></i>
+                  
+                  <span class="name">标签</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/categories" class="menu-item-link" title="分类">
+                  
+                    <i class="fas fa-bookmark" aria-hidden="true"></i>
+                  
+                  <span class="name">分类</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/aboutme" class="menu-item-link" title="关于">
+                  
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                  
+                  <span class="name">关于</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="/friends" class="menu-item-link" title="友情链接">
+                  
+                    <i class="fas fa-users" aria-hidden="true"></i>
+                  
+                  <span class="name">友情链接</span>
+                </a>
+              
+            </li>
+          
+            <li class="menu-item" style="position: relative;">
+              
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/689915465" class="menu-item-link" title="哔哩哔哩">
+                  
+                    <i class="fa-brands fa-bilibili" aria-hidden="true"></i>
+                  
+                  <span class="name">哔哩哔哩</span>
+                </a>
+              
+            </li>
+          
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">本地搜索</span>
+          </span>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="请输入关键字"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+  
+    <div id="he-plugin-simple"></div>
+    <script>
+      WIDGET = {
+        CONFIG: {
+          "modules": "012",
+          "background": 5,
+          "tmpColor": "4A4A4A",
+          "tmpSize": 16,
+          "cityColor": "4A4A4A",
+          "citySize": 16,
+          "aqiSize": 16,
+          "weatherIconSize": 24,
+          "alertIconSize": 18,
+          "padding": "10px 10px 10px 10px",
+          "shadow": "1",
+          "language": "auto",
+          "borderRadius": 5,
+          "fixed": "false",
+          "vertical": "middle",
+          "horizontal": "center",
+          "key": "2784dd3fcb1e4f0f9a9b579bf69641f2"
+        }
+      }
+    </script>
+    <script defer src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script> 
+    
+</header>
+        <!-- 内容区域 -->
+        
+ <!-- prismjs 代码高亮 -->
+ 
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-ae81b3843e877543baf59c4de19be926_1440w.jpeg')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        假如我有三天光明 | 年华似水
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> 发表于：2022-06-08 |
+        </span>
+      
+
+      
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> 分类：
+          
+            <a href="/categories/%E5%81%87%E5%A6%82%E6%88%91%E6%9C%89%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/" class="post-detail-header_category">
+              假如我有三天光明
+            </a>
+          
+        </span>
+      
+
+      
+    
+  </div>
+  
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <p>  　　接下来的几年，安妮和海伦的奋斗获得了辉煌的成果。一次又一次的非凡成就，给海伦带来了社会各界人士的肯定和声誉。1890年春天，她成为历史上第二个能使用嘴巴讲话的聋哑者。她可能终生育而不见，聋而不闻，但他不再哑而无语。<br>  　　当海伦12岁的时候，她十分坚定地宣布：“我将来要上大学，我要上哈佛大学。”<br>  　　多半人对她上大学都深表怀疑，而且要挑此名校。她如何能够与那些视听正常的俊才英杰竞争？只有一个人毫不犹疑地支持她的挑战。安妮说：“海伦，那是男孩读的大学呀！不要去上哈佛大学，另外选一个学校吧！”<br>  　　1900年秋天，海伦进入哈佛大学德克利夫学院。安妮和她形影不离，陪她上课，用手语给她翻译教授的讲课。4年以后，她与其他96个女孩一同站在毕业生的行列中，接受大学毕业文凭——一张无价之宝——向全世界宣称：“海伦·凯勒从举世闻名的德克利夫学院光荣毕业了。她也是全世界受过最完整教育的盲聋者。”<br>  　　海伦的名声与日俱增，成了家喻户晓的人物。只有少数朋友注意到在她身旁，经常有一位纤细瘦小的女士如影相随。安妮心甘情愿、默默无闻地隐身幕后，从不抱怨。一位专栏记者请安妮写一些有关她自己的文章。她不屑一顾地回答：“我的生活是我自己的私事，不必大家费心。”她不要自己曝光，永远要扮演“老师”的角色。<br>  　　“老师”和海伦都过着充实的日子。海伦成了作家，她在书、杂志、报上讲述盲聋生活形态、心理演变过程。她写了很多关于盲者、聋者面临的种种困难。她和老师在美国巡回演讲，启发大众了解残障者的困境。<br>  　　时光流逝，年华似水。一向精神抖擞的安妮，随着海伦奔波，日渐感觉力不从心。1920年，她向海伦说：“这一次演讲我没有办法踉你一起去了，请另外再找一个人去吧！”<br>  　　海伦·凯勒的老师渐渐老去，如今她的双眼也失明了。<br>  　　“再开一次刀吧！”安妮自忖。她去找医生，医生和蔼地告诉她：“请不要伤心，以往你用眼睛过度，该让眼睛休息的时候，你没有休息，为海伦拚命地读那么多书，现在恐怕要付出代价了。好在你受过盲人教育，你那突出的盲文知识就够你读个心满意足了。”<br>  　　安妮心如刀割。“好个心满意足！我痛恨盲文，我不能接受，我要眼睛。”<br>  　　这一次，安妮的努力徒劳失败。垂暮老境，安妮的两眼完全失去了光明。<br>  　　为了海伦，安妮尽量提起精神。悦已悦人，她向朋友诉说：“这些日子以来，欢笑是一件多么痛苦的事，我真痛恨这个老朽无用的身体。我心里想的是步履自如、骑马涉水、熬夜不倦，能观看一切景象的安妮·莎莉文，事实上我却是骨架松垮、瞎眼、疲惫。我自欺、自瞒，已经没有能力再背负这一具老包袱了。<br>  　　她的朋友劝道：“安妮，您怎么可以这样呢！您不能离开我们。海伦不能没有您。”她斩钉截铁地说：“果真如此的话，我的努力将全盘失败。”她毕生献身于帮助海伦·凯勒脱离枷锁，追寻心性的独立、自由、返朴归真，海伦岂可执着不放，眷念依赖老师。<br>  　　1936年10月19日，安妮·莎莉文与世长辞。<br>  　　她留下海伦独自面对现实，海伦得自己调度身、心、语、意和生活起居，老师不再随侧关照了。海伦几次想放弃孤军奋斗，每当懈怠、沮丧时，有一个柔声的告诫就会提醒她：“海伦，老师可不喜欢你这种样子。”<br>  　　慈祥的耳语支撑着海伦忍受痛苦，一点一滴慢慢重建她的意愿，修整她的生活目标，辛勤地工作。她开怀欢笑，珍惜生命奥妙的秉赋。她耕耘不辍，点燃闪烁的生命火炬，照亮残障者的灯塔。<br>  　　安妮·莎莉文没有白费心血，她培育了20世纪不朽的奇葩海伦·凯勒。<br>  　　我们大家都读过这样一些扣人心弦的故事，里面的主人公只有一点有限的时间可以活了，有时长达一年，有时短到只有24小时。然而，我们总是能很感动地发现，这些注定要灭亡的人是如何想办法度过他最后的几天或最后的几小时。当然，我说的是有所选择的自由人，而不是活动范围受到限制的被判刑的罪犯。<br>  　　这类故事使人们思索，很想知道我们在同样的境况下将会怎么办。我们作为必死的生物，处在这最后几小时内，会充满一些什么样的遭遇、什么样的感受、什么样的联想呢？我们回顾往事，会找到哪些幸福、哪些遗憾呢？<br>  　　有时我认为，如果我们像明天就会死去那样去生活，才是最好的规则。这样一种态度可以尖锐地强调生命的价值。我们每天都应该怀着友善、朝气和渴望去生活，但是，当时间在我们前面日复一日，月复一月，年复一年地不断延伸开去，这些品质常常就会丧失。当然，也有那些愿意把“吃吧，喝吧，及时行乐吧”作为座右铭的人，然而大多数人却为死神的来临所折磨。<br>  　　在许多故事中，命运已定的主人公通常在最后一分钟，由于遭遇好运而得到拯救，然而他的价值观念几乎总是改变了。他更加领悟了生命及其永恒的精神价值的意义。常常可以看到，那些活在或者曾经活在死亡阴影中的人们，对他们所做的每件事情都赋予了一种醇美香甜之感。<br>  　　然而，我们大多数人都把人生视为当然。我们知道有一天我们必得死去，但我们总是把那一天想得极其遥远。我们处于精神活泼、身体轻快的健康状态，死亡简直是不可想像的，我们难得想到它。日子伸延到无穷无尽的远景之中，所以，我们总是做些无价值的工作，几乎意识不到我们对生活的懒洋洋的态度。<br>  　　我担心，我们全部的天赋和感官都有同样的懒惰的特征。只有聋人才珍惜听觉，只有盲人才体会重见天日的种种幸福。这种看法特别适用于那些成年后失去视觉和听觉的人。但是，那些在视觉或听觉上没有蒙受损害的人，却很少能够充分地利用这些可贵的感官。他们的眼睛和耳朵模模糊糊地吸收了一切景色和声音，他们并不专心也很少珍惜它们。我们并不感激我们的所有，直到我们丧失了它；我们意识不到我们的健康，直到我们生了病——自古以来，莫不如此。<br>  　　我常想，如果每个人在他的初识阶段患过几天盲聋症，这将是一种幸福。黑暗会使他更珍惜视觉；哑默会教导他更喜慕声音。我时常测验我那些有视觉的朋友，看他们究竟看见了什么。<br>  　　前几天，一位很要好的朋友来探望我，她刚从树林里远足而来，于是我就问她，她观察到一些什么。“没有什么特别的。”她回答说。要不是我惯于听到这样的回答（因为我很久就已确信有视觉的人看得很少），我简直会不相信我的耳朵。<br>  　　在树林中穿行一个小时，却没有看到什么值得注意的东西，这怎么可能呢？我自问着。我这个不能用眼睛看的人，仅仅凭借触觉，就能发现好几百种使我感兴趣的东西。我用双手亲切地抚摸一株桦树光滑的外皮，或者一株松树粗糙不平的树皮。在春天，我摸着树枝，满怀希望地寻找蓓蕾，寻找大自然冬眠之后苏醒过来的第一个征兆。有时，我感觉到一朵花的可爱而柔润的肌理，发现它那不平常的卷曲。偶然，如果我非常走运，将手轻柔地放在小树上，我可以感觉到小鸟在音律丰满的歌声中快乐地跳跃。我非常喜欢让小溪凉爽的流水从我张开的手指缝隙间急促地淌过。我觉得，松针或者海绵似的柔草铺就的茂盛葱郁的地毯，比豪华奢侈的波斯小地毯更受欢迎。对我来说，四季的盛景是一场极其动人而且演不完的戏剧，它的情节从我指尖一幕幕滑过。<br>  　　有时，我的心在哭泣，渴望看到所有这些东西。如果我仅仅凭借触觉就能得到那么多的快乐，那么凭借视觉将会有多少美展现出来啊！可是，那些有眼睛的人显然看得很少。对于世界上充盈的五颜六色、千姿百态万花筒般的景象，他们认为是理所当然的。也许人类就是这样，极少去珍惜我们所拥有的东西，而渴望那些我们所没有的东西。在光明的世界中，视觉这一天赋才能，竟只被作为一种便利，而不是一种丰富生活的手段，这是多么可惜啊！<br>  　　假如我是个大学校长，我要开设一门必修课程，就是“怎样使用你的眼睛”。教授们将向他的学生讲授，怎样通过真正观看那些从他们面前过去而未被注意的事物，使他们的生活增添乐趣，这将唤醒他们沉睡而迟缓的天赋。<br>  　　也许我能凭借想像来说明，假如给我哪怕三天的光明，我最喜欢看到一些什么。在我想的时候，也请你想一下吧，请想想这个问题，假定你也只有三天光明，那么你会怎样使用你自己的眼睛，你最想让你的目光停留在什么上面呢？自然，我将尽可能看看在我黑暗的岁月里令我珍惜的东西，你也想让你的目光停留在令你珍惜的东西上，以便在那即将到来的夜晚，将它们记住。<br>  　　如果，由于某种奇迹，我可以睁眼看三天，紧跟着回到黑暗中去，我将会把这段时间分成三部分。<br>  　　第一天第一天，我要看人，他们的善良、温厚与友谊使我的生活值得一过。首先，我希望长久地凝视我亲爱的老师，安妮·莎莉文·梅西太太的面庞，当我还是个孩子的时候，她就来到了我面前，为我打开了外面的世界。我将不仅要看到她面庞的轮廓，以便我能够将它珍藏在我的记忆中，而且还要研究她的容貌，发现她出自同情心的温柔和耐心的生动迹象，她正是以此来完成教育我的艰巨任务的。我希望从她的眼睛里看到能使她在困难面前站得稳的坚强性格，并且看到她那经常向我流露的、对于全人类的同情。<br>  　　我不知道什么是透过“灵魂之窗”，即从眼睛看到朋友的内心。我只能用手指尖来“看”一个脸的轮廓。我能够发觉欢笑、悲哀和其他许多明显的情感。我是从感觉朋友的脸来认识他们的。但是，我不能靠触摸来真正描绘他们的个性。当然，通过其他方法，通过他们向我表达的思想，通过他们向我显示出的任何动作，我对他们的个性也有所了解。但是我却不能对他们有较深的理解，而那种理解，我相信，通过看见他们，通过观看他们对种种被表达的思想和境况的反应，通过注意他们的眼神和脸色的反应，是可以获得的。<br>  　　我身旁的朋友，我了解得很清楚，因为经过长年累月，他们已经将自己的各个方面揭示给了我；然而，对于偶然的朋友，我只有一个不完全的印象。这个印象还是从一次握手中，从我通过手指尖理解他们的嘴唇发出的字句中，或从他们在我手掌的轻轻划写中获得来的。<br>  　　你们有视觉的人，可以通过观察对方微妙的面部表情，肌肉的颤动，手势的摇摆，迅速领悟对方所表达的意思的实质，这该是多么容易，多么令人心满意足啊！但是，你们可曾想到用你们的视觉，抓住一个人面部的外表特征，来透视一个朋友或者熟人的内心吗？<br>  　　我还想问你们：能准确地描绘出五位好朋友的面容吗？你们有些人能够，但是很多人不能够。有过一次实验，我询问那些丈夫们，关于他们妻子眼睛的颜色，他们常常显得困窘，供认他们不知道。顺便说一下，妻子们还总是经常抱怨丈夫不注意自己的新服装、新帽子的颜色。以及家内摆设的变化。<br>  　　有视觉的人，他们的眼睛不久便习惯了周围事物的常规，他们实际上仅仅注意令人惊奇的和壮观的事物。然而，即使他们观看最壮丽的奇观，眼睛都是懒洋洋的。法庭的记录每天都透露出“目击者”看得多么不准确。某一事件会被几个见证人以几种不同的方式“看见”。有的人比别人看得更多，但没有几个人看见他们视线以内一切事物。<br>  　　啊，如果给我三天光明，我会看见多少东西啊！<br>      第一天<br>      第一天，将会是忙碌的一天。我将把我所有亲爱的朋友都叫来，长久地望着他们的脸，把他们内在美的外部迹像铭刻在我的心中。我也将会把目光停留在一个婴儿的脸上，以便能够捕捉到在生活冲突所致的个人意识尚未建立之前的那种渴望的、天真无邪的美。</p>
+<p>  　　我还将看看我的小狗们忠实信赖的眼睛——庄重、宁静的小司格梯、达吉，还有健壮而又懂事的大德恩，以及黑尔格，它们的热情、幼稚而顽皮的友谊，使我获得了很大的安慰。</p>
+<p>  　　在忙碌的第一天，我还将观察一下我的房间里简单的小东西，我要看看我脚下的小地毯的温暖颜色，墙壁上的画，将房子变成一个家的那些亲切的小玩意。我的目光将会崇敬地落在我读过的盲文书籍上，然而那些能看的人们所读的印刷字体的书籍，会使我更加感兴趣。在我一生漫长的黑夜里，我读过的和人们读给我听的那些书，已经成为了一座辉煌的巨大灯塔，为我指示出了人生及心灵的最深的航道。</p>
+<p>  　　在能看见的第一天下午，我将到森林里进行一次远足，让我的眼睛陶醉在自然界的美丽之中，在几小时内，拼命吸取那经常展现在正常视力人面前的光辉灿烂的广阔奇观。自森林郊游返回的途中，我要走在农庄附近的小路上，以便看看在田野耕作的马（也许我只能看到一台拖拉机），看看紧靠着土地过活的悠然自得的人们，我将为光艳动人的落日奇景而祈祷。</p>
+<p>  　　当黄昏降临，我将由于凭借人为的光明看见外物而感到喜悦，当大自然宣告黑暗到来时，人类天才地创造了灯光，来延伸他的视力。在第一个有视觉的夜晚，我将睡不着，心中充满对于这一天的回忆。</p>
+<pre><code>  第二天
+  有视觉的第二天，我要在黎明起身，去看黑夜变为白昼的动人奇迹。我将怀着敬畏之心，仰望壮丽的曙光全景，与此同时，太阳唤醒了沉睡的大地。
+</code></pre>
+<p>  　　这一天，我将向世界，向过去和现在的世界匆忙瞥一眼。我想看看人类进步的奇观，那变化无穷的万古千年。这么多的年代，怎么能被压缩成一天呢？当然是通过博物馆。我常常参观纽约自然史博物馆，用手摸一摸那里展出的许多展品，但我曾经渴望亲眼看看地球的简史和陈列在那里的地球上的居民——按照自然环境描画的动物和人类，巨大的恐龙和剑齿象的化石，早在人类出现并以他短小的身材和有力的头脑征服动物王国以前，它们就漫游在地球上了；博物馆还逼真地介绍了动物、人类，以及劳动工具的发展经过，人类使用这些工具，在这个行星上为自己创造了安全牢固的家；博物馆还介绍了自然史的其它无数方面。<br>  　　我不知道，有多少本文的读者看到过那个吸引人的博物馆里所描绘的活着的动物的形形色色的样子。当然，许多人没有这个机会，但是，我相信许多有机会的人却没有利用它。在那里确实是使用你眼睛的好地方。有视觉的你可以在那里度过许多收益不浅的日子，然而我，借助于想像中的能看见的三大，仅能匆匆一瞥而过。<br>  　　我的下一站将是首都艺术博物馆，因为它正像自然史博物馆显示了世界的物质外观那样，首都艺术博物馆显示了人类精神的无数个小侧面。在整个人类历史阶段，人类对于艺术表现的强烈欲望几乎像对待食物、藏身处，以及生育繁殖一样迫切。在这里，在首都艺术博物馆巨大的展览厅里，埃及、希腊、罗马的精神在它们的艺术中表现出来，展现在我面前。<br>  　　我通过手清楚地知道了古代尼罗河国度的诸神和女神。我抚摸了巴台农神庙中的复制品，感到了雅典冲锋战士有韵律的美。阿波罗、维纳斯、以及双翼胜利之神莎莫瑞丝都使我爱不释手。荷马的那副多瘤有须的面容对我来说是极其珍贵的，因为他也懂得什么叫失明。我的手依依不舍地留恋罗马及后期的逼真的大理石雕刻，我的手抚摸遍了米开朗基罗的感人的英勇的摩西石雕像，我感知到罗丹的力量，我敬畏哥特人对于木刻的虔诚。这些能够触摸的艺术品对我来讲，是极有意义的，然而，与其说它们是供人触摸的，毋宁说它们是供人观赏的，而我只能猜测那种我看不见的美。我能欣赏希腊花瓶的简朴的线条，但它的那些图案装饰我却看不到。<br>  　　因此，这一天，给我光明的第二天，我将通过艺术来搜寻人类的灵魂。我会看见那些我凭借触摸所知道的东西。更妙的是，整个壮丽的绘画世界将向我打开，从富有宁静的宗教色彩的意大利早期艺术及至带有狂想风格的现代派艺术。我将细心地观察拉斐尔、达芬奇、提香、伦勃朗的油画。我要饱览维洛内萨的温暖色彩，研究艾尔·格列科的奥秘，从科罗的绘画中重新观察大自然。啊，你们有眼睛的人们竟能欣赏到历代艺术中这么丰富的意味和美！在我对这个艺术神殿的短暂的游览中，我一点儿也不能评论展开在我面前的那个伟大的艺术世界，我将只能得到一个肤浅的印象。艺术家们告诉我，为了达到深刻而真正的艺术鉴赏，一个人必须训练眼睛。一个人必须通过经验学习判断线条、构图、形式和颜色的品质优劣。假如我有视觉从事这么使人着迷的研究，该是多么幸福啊！但是，我听说，对于你们有眼睛的许多人，艺术世界仍是个有待进一步探索的世界。<br>  　　我十分勉强地离开了首都艺术博物馆，一它装纳着美的钥匙。但是，看得见的人们往往并不需要到首都艺术博物馆去寻找这把美的钥匙。同样的钥匙还在较小的博物馆中甚或在小图书馆书架上等待着。但是，在我假想的有视觉的有限时间里，我应当挑选一把钥匙，能在最短的时间内去开启藏有最大宝藏的地方。<br>  　　我重见光明的第二晚，我要在剧院或电影院里度过。即使现在我也常常出席剧场的各种各样的演出，但是，剧情必须由一位同伴拼写在我手上。然而，我多么想亲眼看看哈姆雷特的迷人的风采，或者穿着伊丽莎白时代鲜艳服饰的生气勃勃的弗尔斯塔夫！我多么想注视哈姆雷特的每一个优雅的动作，注视精神饱满的弗尔斯塔夫的大摇大摆！因为我只能看一场戏，这就使我感到非常为难，因为还有数十幕我想要看的戏剧。<br>  　　你们有视觉，能看到你们喜爱的任何一幕戏。当你们观看一幕戏剧、一部电影或者任何一个场面时，我不知道，究竟有多少人对于使你们享受它的色彩、优美和动作的视觉的奇迹有所认识，并怀有感激之情呢？由于我生活在一个限于手触的范围里，我不能享受到有节奏的动作美。但我只能模糊地想像一下巴荚洛娃的优美，虽然我知道一点律动的快感，因为我常常能在音乐震动地板时感觉到它的节拍。我能充分想像那有韵律的动作，一定是世界上最令人悦目的一种景象。我用手指抚摸大理石雕像的线条，就能够推断出几分。如果这种静态美都能那么可爱，看到的动态美一定更加令人激动。我最珍贵的回忆之一就是，约瑟·杰佛逊让我在他又说又做地表演他所爱的里卜·万·温克时去摸他的脸庞和双手。<br>  　　我多少能体会到一点戏剧世界，我永远不会忘记那一瞬间的快乐。但是，我多么渴望观看和倾听戏剧表演进行中对白和动作的相互作用啊！而你们看得见的人该能从中得到多少快乐啊！如果我能看到仅仅一场戏，我就会知道怎样在心中描绘出我用盲文字母读到或了解到的近百部戏剧的情节。所以，在我虚构的重见光明的第二晚，我没有睡成，整晚都在欣赏戏剧文学。</p>
+<pre><code>  第三天
+  下一天清晨，我将再一次迎接黎明，急于寻找新的喜悦，因为我相信，对于那些真正看得见的人，每天的黎明一定是一个永远重复的新的美景。依据我虚构的奇迹的期限，这将是我有视觉的第三天，也是最后一天。我将没有时间花费在遗憾和热望中，因为有太多的东西要去看。第一天，我奉献给了我有生命和无生命的朋友。第二天，向我显示了人与自然的历史。今天，我将在当前的日常世界中度过，到为生活奔忙的人们经常去的地方去，而哪儿能像纽约一样找得到人们那么多的活动和那么多的状况呢？所以城市成了我的目的地。
+</code></pre>
+<p>  　　我从我的家，长岛的佛拉斯特小而安静的郊区出发。这里，环绕着绿色草地。树木和鲜花，有着整洁的小房子，到处是妇女儿童快乐的声音和活动，非常幸福，是城里劳动人民安谧的憩息地。我驱车驶过跨越伊斯特河上的钢制带状桥梁，对人脑的力量和独创性有了一个崭新的印象。忙碌的船只在河中嘎嘎急驶——高速飞驶的小艇，慢悠悠、喷着鼻息的拖船。如果我今后还有看得见的日子，我要用许多时光来眺望这河中令人欢快的景像。我向前眺望，我的前面耸立着纽约——一个仿佛从神话的书页中搬下来的城市的奇异高楼。多么令人敬畏的建筑啊！这些灿烂的教堂塔尖，这些辽阔的石砌钢筑的河堤坡岸–真像诸神为他们自己修建的一般。这幅生动的画面是几百万人民每天生活的一部分。我不知道，有多少人会对它回头投去一瞥？只怕寥寥无几。对这个壮丽的景色，他们视而不见，因为这一切对他们是太熟悉了。<br>  　　我匆匆赶到那些庞大建筑物之———帝国大厦的顶端，因为不久以前，我在那里凭借我秘书的眼睛“俯视”过这座城市，我渴望把我的想像同现实作一比较。我相信，展现在我面前的全部景色一定不会令我失望，因为它对我将是另一个世界的景色。此时，我开始周游这座城市。首先，我站在繁华的街角，只看看人，试图凭借对他们的观察去了解一下他们的生活。看到他们的笑颜，我感到快乐；看到他们的严肃的决定，我感到骄傲；看到他们的痛苦，我不禁充满同情。<br>  　　我沿着第五大街散步。我漫然四顾，眼光并不投向某一特殊目标，而只看看万花筒般五光十色的景像。我确信，那些活动在人群中的妇女的服装色彩一定是一幅绝不会令我厌烦的华丽景色。然而如果我有视觉的话，我也许会像其他大多数妇女一样——对个别服装的时髦式样感到兴趣，而对大量的灿烂色彩不怎么注意。而且，我还确信，我将成为一位习惯难改的橱窗顾客，因为，观赏这些无数精美的陈列品一定是一种眼福。<br>  　　从第五大街起，我作一番环城游览——到公园大道去，到贫民窟去，到工厂去，到孩子们玩耍的公园去，我还将参观外国人居住区，进行一次不出门的海外旅行。我始终睁大眼睛注视幸福和悲惨的全部景像，以便能够深人调查，进一步了解人们是怎样工作和生活的。<br>  　　我的心充满了人和物的形象。我的眼睛决不轻易放过一件小事，它争取密切关注它所看到的每一件事物。有些景像令人愉快，使人陶醉；但有些则是极其凄惨，令人伤感。对于后者，我绝不闭上我的双眼，因为它们也是生活的一部分。在它们面前闭上眼睛，就等于关闭了心房，关闭了思想。<br>  　　我有视觉的第三天即将结束了。也许有很多重要而严肃的事情，需要我利用这剩下的几个小时去看，去做。但是，我担心在最后一个夜晚，我还会再次跑到剧院去，看一场热闹而有趣的戏剧，好领略一下人类心灵中的谐音。<br>  　　到了午夜，我摆脱盲人苦境的短暂时刻就要结束了，永久的黑夜将再次向我迫近。在那短短的三天，我自然不能看到我想要看到的一切。只有在黑暗再次向我袭来之时，我才感到我丢下了多少东西没有见到。然而，我的内心充满了甜蜜的回忆，使我很少有时间来懊悔。此后，我摸到每一件物品，我的记忆都将鲜明地反映出那件物品是个什么样子。<br>  　　我的这一番如何度过重见光明的三天的简述，也许与你假设知道自己即将失明而为自己所做的安排不相一致。可是，我相信，假如你真的面临那种厄运，你的目光将会尽量投向以前从未曾见过的事物，并将它们储存在记忆中，为今后漫长的黑夜所用。你将比以往更好地利用自己的眼睛。你所看到的每一件东西，对你都是那么珍贵，你的目光将饱览那出现在你视线之内的每一件物品。然后，你将真正看到，一个美的世界在你面前展开。<br>  　　失明的我可以给那些看得见的人们一个提示——对那些能够充分利用天赋视觉的人们一个忠告：善用你的眼睛吧，犹如明天你将遭到失明的灾难。同样的方法也可以应用于其它感官。聆听乐曲的妙音，鸟儿的歌唱，管弦乐队的雄浑而铿锵有力的曲调吧，犹如明天你将遭到耳聋的厄运。抚摸每一件你想要抚摸的物品吧，犹如明天你的触觉将会衰退。嗅闻所有鲜花的芳香，品尝每一口佳肴吧，犹如明天你再不能嗅闻品尝。充分利用每一个感官，通过自然给予你的几种接触手段，为世界向你显示的所有愉快而美好的细节而自豪吧！不过，在所有感官中，我相信，视觉一定是最令人赏心悦目的。</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/tags/%E5%81%87%E5%A6%82%E6%88%91%E6%9C%89%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/" class="">
+              假如我有三天光明
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>作者:  </strong>南辞</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>文章链接:  </strong>
+    <a href="/2022/06/08/假如给我三天光明/年华似水/" target="_blank" title="假如我有三天光明 | 年华似水">https://nancimua.github.io/2022/06/08/假如给我三天光明/年华似水/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7af5c2c2ccc35d5b52fcfc42531cbdc3_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7af5c2c2ccc35d5b52fcfc42531cbdc3_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/2022/06/08/%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/%E5%B8%8C%E6%9C%9B/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> 上一篇:
+        <div class="title-text">假如我有三天光明 | 希望</div>
+      </div>
+      
+      <!-- <div class="content">
+          　　随着年龄的增长，希望把自己的思想情感表达出来的愿望更加强烈。几种单调的手势，也越发不敷应用了。每次手语无法让别人
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-41a3e133fa366c7ed23d1c5375e46d8c_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-41a3e133fa366c7ed23d1c5375e46d8c_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/2022/06/08/%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E/%E6%84%8F%E5%A4%96%E7%9A%84%E5%96%9C%E6%82%A6/" class="post-nav-link">
+      <div class="title">
+        下一篇: <i class="fas fa-angle-right"></i>
+        <div class="title-text">假如我有三天光明 | 意外的喜悦</div>
+      </div>
+      <!-- <div class="content">
+          　　经过长期的组织策划，在许多人都认为有此必要的情形下，一个全国性盲人机构终于成立了，时值1921年。宾夕法尼亚州盲
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/aboutme/'>
+          <img src='https://picx.zhimg.com/80/v2-c7fcadd83875ab40da79d66fce108981_1440w.png'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>南辞</h2>
+        
+        
+        
+          <p><span id="jinrishici-sentence">南辞的家</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="https://space.bilibili.com/689915465"
+              class="social fa-brands fa-bilibili flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:1362593067@qq.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/nancimua/nanci.github.io"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=1362593067"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+    
+      <div class="widget moyu" id="moyu" style="order: 0;background: #e9e5d1">
+        <header>
+          
+            <a style="color: #d63130" target="_blank" rel="noopener" href='http://baidu.com'><i class="fa-solid fa-fish fa-fw" aria-hidden="true"></i><span class='name'>开始摸鱼</span></a>
+          
+        </header>
+        <div class="content">
+          <img class="no-lazy" src="https://api.vvhan.com/api/moyu" style="width:100%">
+        </div>
+    </div>
+    
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!--  -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2025/02/04/%E5%BE%AE%E8%BD%AFoffice/Office%E6%BF%80%E6%B4%BB%E5%90%8E%EF%BC%8C%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E4%B8%AD%E6%98%BE%E7%A4%BA%E8%B4%A6%E6%88%B7%E9%94%99%E8%AF%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f3f11e8c9760e1bd9851eebc0852ae04_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f3f11e8c9760e1bd9851eebc0852ae04_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-04</span>
+                
+              </div>
+              <a class="post-title" href="/2025/02/04/%E5%BE%AE%E8%BD%AFoffice/Office%E6%BF%80%E6%B4%BB%E5%90%8E%EF%BC%8C%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E4%B8%AD%E6%98%BE%E7%A4%BA%E8%B4%A6%E6%88%B7%E9%94%99%E8%AF%AF/">Office激活后，用户信息中显示账户错误</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2024/10/03/CMGE%20V0-H%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-2dd53578bed3716bc2dc7fd797218557_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-2dd53578bed3716bc2dc7fd797218557_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-03</span>
+                
+              </div>
+              <a class="post-title" href="/2024/10/03/CMGE%20V0-H%E5%AE%89%E8%A3%85%E8%AF%B4%E6%98%8E/">CMGE V0-H安装说明</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2024/10/03/Dell%20G7%20%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB%E8%AE%BE%E5%A4%87%20-%20Goodix%20fingerprint%20%E5%A4%B1%E6%95%88%E5%AE%98%E6%96%B9%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%88%E5%9B%BE%E6%96%87%EF%BC%89/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-60ff53bf4d8a843adf9f449761726048_1440w.jpeg" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-60ff53bf4d8a843adf9f449761726048_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-03</span>
+                
+              </div>
+              <a class="post-title" href="/2024/10/03/Dell%20G7%20%E6%8C%87%E7%BA%B9%E8%AF%86%E5%88%AB%E8%AE%BE%E5%A4%87%20-%20Goodix%20fingerprint%20%E5%A4%B1%E6%95%88%E5%AE%98%E6%96%B9%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95%EF%BC%88%E5%9B%BE%E6%96%87%EF%BC%89/">Dell G7 指纹识别设备-Goodix fingerprint 失效官方解决办法（图文）</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2024/10/03/win7%E5%AE%89%E8%A3%85edge%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%90%E7%A4%BA%E6%AD%A4%E7%89%88%E6%9C%AC%E7%9A%84%20Windows%20%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%20Microsoft%20Edge/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-a6084cf7dfbac81b538315b6fa3cff09_1440w.jpeg" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-a6084cf7dfbac81b538315b6fa3cff09_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-03</span>
+                
+              </div>
+              <a class="post-title" href="/2024/10/03/win7%E5%AE%89%E8%A3%85edge%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8F%90%E7%A4%BA%E6%AD%A4%E7%89%88%E6%9C%AC%E7%9A%84%20Windows%20%E4%B8%8D%E5%86%8D%E6%94%AF%E6%8C%81%20Microsoft%20Edge/">win7安装edge浏览器提示:此版本的 Windows 不再支持 Microsoft Edge</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/2024/10/03/%E7%B3%BB%E7%BB%9F%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%20(Sysprep.exe)%20%E5%AE%9E%E7%8E%B0OOBE%E7%94%A8%E6%B3%95/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-1172c6f8a22b5e244e0fc3ac251b9ad1_1440w.jpeg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-1172c6f8a22b5e244e0fc3ac251b9ad1_1440w.jpeg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-03</span>
+                
+              </div>
+              <a class="post-title" href="/2024/10/03/%E7%B3%BB%E7%BB%9F%E5%87%86%E5%A4%87%E5%B7%A5%E5%85%B7%20(Sysprep.exe)%20%E5%AE%9E%E7%8E%B0OOBE%E7%94%A8%E6%B3%95/">系统准备工具 (Sysprep.exe) 实现OOBE用法</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script src="/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script>
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(66, 185, 133, 0.8)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 <a href="/">南辞的家</a> <br> Powered by <a target="_blank" rel="noopener" href="https://space.bilibili.com/689915465">南辞</a> | <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">Hexo</a> <br> Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          
+            <!-- 不蒜子统计 -->
+            <!-- 不蒜子统计 -->
+<span id="busuanzi_container_site_pv">
+      <i class="fas fa-eye" aria-hidden="true"></i>本站总访问量：<span id="busuanzi_value_site_pv"></span> 次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+      <i class="fas fa-users" aria-hidden="true"></i>本站访客数：<span id="busuanzi_value_site_uv"></span> 人
+</span>
+
+          
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark">
+  <div class="dark-content">
+    <i class="fas fa-moon" aria-hidden="true"></i>
+    <!-- <span>关灯</span> -->
+  </div>
+  
+</div>
+
+<script>
+  $(function() {
+    let isDark = JSON.parse(localStorage.getItem('dark'))  || JSON.parse('false');
+    if (isDark) {
+      $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+    }
+    $('.dark').click(function() {
+      if ($(document.body).is('.darkModel')) {
+        $(document.body).removeClass('darkModel');
+        localStorage.setItem('dark', false);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-moon" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      } else {
+        $(document.body).addClass('darkModel');
+        localStorage.setItem('dark', true);
+        $(".dark-content").replaceWith(
+          `
+          <div class='dark-content'>
+            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+          </div>
+          `
+        );
+      }
+    })
+  })
+</script>
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer>
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script src="/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js  
+  class=""
+  server="netease"
+  type="playlist"
+  id="6833016027"
+  fixed='true'
+  autoplay='false'
+  theme='#42b983'
+  loop='all'
+  order='random'
+  preload='auto'
+  volume='2'
+  list-folded='true'
+>
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+
+    <script src="/js/utils/index.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax>
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = '复制';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+    <script type="text/javascript">
+  var utteranceCommon = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceCommon.Theme = 'github-dark';
+    } else {
+      utteranceCommon.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('repo', '')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceCommon.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+  
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+  
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
+    <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script src="/js/cursor/explosion.min.js"></script>
+  
+
+
+
+
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/js/pjax@0.2.8/index.js"></script>
+  
+    <!-- 样式位于：source/css/_third-party/pjaxanimate.styl -->
+
+<div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  </body>
+</html>

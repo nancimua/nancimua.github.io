@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="cn">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+		<title>个人成绩</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/templatemo_style.css">
+		<link rel="icon" href="https://picx.zhimg.com/80/v2-c7fcadd83875ab40da79d66fce108981_1440w.png">
+		<script src="https://cdn.jsdelivr.net/npm/bluebird@3/js/browser/bluebird.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/whatwg-fetch@2.0.3/fetch.min.js"></script>
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			div {
+				width: 60%;
+				margin: 0 auto;
+			}
+
+			h3 {
+				text-align: center;
+			}
+
+			table,
+			tr,
+			td,
+			th {
+				text-align: center;
+				border: 1px solid gray;
+				border-collapse: collapse;
+			}
+
+			table {
+				width: 100%;
+			}
+
+			tr:nth-child(2n) {
+				background-color: rgba(88, 73, 65, 0.18);
+			}
+
+			tr:hover {
+				background-color: rgb(255, 235, 149);
+			}
+
+			#tt {
+				text-align: right;
+				padding-right: 20px;
+			}
+		</style>
+	</head>
+
+	<body oncontextmenu="return false" onselectstart="return false" ondragstart="return false">
+
+		<header class="site-header container animated fadeInDown">
+			<div class="header-wrapper"></div>
+			<div>
+				<h4><a href="../index.html">首页</a></h4>
+			</div>
+			<div>
+				<p class="power">© 2025 Powered By
+					<a href="https://space.bilibili.com/689915465" target="_blank">是南辞呀mua</a>
+				</p>
+			</div>
+		</header>
+
+		<!-- 技能证书 -->
+		<div style="text-align: center; width=" 850" height="650">
+			<height: 2px; class="text" margin="0 auto;">2023/06/21获得广东省信息通信网络运行管理员四级证书</h2>
+		</div>
+
+		<div style="text-align: center ; width=" 850" height="650">
+			<img src="https://picx.zhimg.com/80/v2-4b36294466d4452c076520072da8f58d_1440w.png" alt="技能证书" width="850"
+				height="650" style="margin: 0 auto;"></img>
+		</div>
+
+		<div style="text-align: center; width=" 850" height="650">
+			<height: 2px; class="text" margin="0 auto;">2023/07/10取得广东省信息通信网络运行管理员四级纸质证书</h2>
+		</div>
+
+		<div style="text-align: center ; width=" 850" height="650" ;>
+			<img src="https://picx.zhimg.com/80/v2-871c97615047b37195ec8f00701d17d0_1440w.jpeg" alt="技能证书" width="850"
+				height="650" style="margin: 0 auto;"></img>
+		</div>
+		<!-- 技能证书 -->
+
+		<p></p>
+		<!-- 空格 -->
+
+		<div id="menu-container">
+			<div>
+
+				<h3>2024-2025年秋季学期计算机应用技术成绩表</h3>
+				<table>
+					<tr>
+						<th>学号</th>
+						<th>科目</th>
+						<th>成绩</th>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>程序设计基础</td>
+						<td>67</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>前端设计与开发</td>
+						<td>84</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>计算机网络基础</td>
+						<td>81</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>国家安全教育</td>
+						<td>71</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>大学生创新创业教育</td>
+						<td>83</td>
+					</tr>
+
+
+					<tr>
+						<td>2333</td>
+						<td>大学音乐</td>
+						<td>86</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>大学美术</td>
+						<td>84</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>大学英语（二）</td>
+						<td>71</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>思想道德与法治（二）</td>
+						<td>71</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>体育与健康（二）</td>
+						<td>70</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>形势与政策（二）</td>
+						<td>85</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>高等数学（二）</td>
+						<td>62</td>
+					</tr>
+
+					<tr>
+						<td id="tt" colspan="3">总计：12科，平均分：76.25</td>
+					</tr>
+
+				</table>
+				<h3>2024-2025年春季学期计算机应用技术成绩表</h3>
+				<table>
+					<tr>
+						<th>学号</th>
+						<th>科目</th>
+						<th>成绩</th>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>Photoshop图像处理</td>
+						<td>82</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>计算机组装与维护</td>
+						<td>78</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>军事训练与国防教育</td>
+						<td>69</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>思想道德与法制(一)</td>
+						<td>64</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>体育与健康(一)</td>
+						<td>67</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>形势与政策(一)</td>
+						<td>86</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>计算机应用基础</td>
+						<td>90</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>大学英语(一)</td>
+						<td>63</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>劳动教育</td>
+						<td>95</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>大学生职业生涯规划</td>
+						<td>88</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>中华优秀传统文化</td>
+						<td>86</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>高等数学(一)</td>
+						<td>63</td>
+					</tr>
+					<tr>
+						<td id="tt" colspan="3">总计：12科，平均分：77.58分</td>
+					</tr>
+				</table>
+				<h3>2023-2024年春季学期计算机网络应用成绩表</h3>
+				<table>
+					<tr>
+						<th>学号</th>
+						<th>科目</th>
+						<th>成绩</th>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>计算机高级办公软件</td>
+						<td>100</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>企业网络安全防护</td>
+						<td>78</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>云计算之服务器虚拟化</td>
+						<td>92</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>体育</td>
+						<td>80</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>就业指导</td>
+						<td>91</td>
+					</tr>
+
+					<tr>
+						<td id="tt" colspan="5">总计：5科，平均分：88.2</td>
+					</tr>
+
+				</table>
+
+				<h3>2022-2023年秋季学期计算机网络应用成绩表</h3>
+				<table>
+					<tr>
+						<td>学号</td>
+						<td>科目</td>
+						<td>成绩</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>Linux操作系统</td>
+						<td>93</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>搭建企业无线网络</td>
+						<td>100</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>德育2</td>
+						<td>92</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>企业网络存储系统</td>
+						<td>82</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>体育</td>
+						<td>86</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>专业英语</td>
+						<td>89</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>综合布线</td>
+						<td>91</td>
+					</tr>
+					<tr>
+						<td id="tt" colspan="5">总计:7科，班级排名：4，总分：633，平均分：90.42</td>
+					</tr>
+				</table>
+
+				<h3>2021-2022年春季学期计算机网络应用成绩表</h3>
+				<table>
+					<tr>
+						<td>学号</td>
+						<td>科目</td>
+						<td>成绩</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>Windows服务器安装与配置</td>
+						<td>97</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>企业网络搭建与维护</td>
+						<td>77</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>网页制作</td>
+						<td>97</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>AutoCAD</td>
+						<td>99</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>体育</td>
+						<td>84</td>
+					</tr>
+					<tr>
+						<td>2333</td>
+						<td>语文</td>
+						<td>92</td>
+					</tr>
+					<tr>
+						<td id="tt" colspan="5">总计:6科，班级排名：3，总分：546，平均分：91</td>
+					</tr>
+				</table>
+				<h3>2021-2022年秋季学期计算机网络应用成绩表</h3>
+				<table>
+					<tr>
+						<th>学号</th>
+						<th>科目</th>
+						<th>成绩</th>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>Photoshop图像处理</td>
+						<td>70</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>Windows 10系统操作</td>
+						<td>96</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>德育1</td>
+						<td>89</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>计算机网络基础</td>
+						<td>100</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>历史</td>
+						<td>88</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>中国高技能⼈才楷模事迹</td>
+						<td>96</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>中国特色社会主义理论</td>
+						<td>93</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>计算机应用基础</td>
+						<td>95</td>
+					</tr>
+
+					<tr>
+						<td>2333</td>
+						<td>体育</td>
+						<td>88</td>
+					</tr>
+
+					</tr>
+
+					<tr>
+						<td id="tt" colspan="5">总计：9科，平均分：90.55</td>
+					</tr>
+
+				</table>
+				</table>
+			</div>
+		</div>
+		<span class="border-top"></span>
+		<span class="border-left"></span>
+		<span class="border-right"></span>
+		<span class="border-bottom"></span>
+	</body>
+</html>
